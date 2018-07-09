@@ -93,11 +93,13 @@ fabric.properties
 .idea/httpRequests
 
 .gitignore
-.gradle/
 .idea/compiler.xml
-.idea/libraries/
 .idea/modules/JavaLearning_main.iml
 .idea/modules/JavaLearning_test.iml
 .idea/vcs.xml
-.idea/workspace.xml
 src/
+/.gitignore
+/build.gradle
+/gradlew
+/gradlew.bat
+/settings.gradle
