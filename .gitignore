@@ -15,8 +15,6 @@ gradle-app.setting
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
 ### Java template
-# Compiled class file
-*.class
 
 # Log file
 *.log
@@ -94,12 +92,9 @@ fabric.properties
 
 .gitignore
 .idea/compiler.xml
-.idea/modules/JavaLearning_main.iml
-.idea/modules/JavaLearning_test.iml
 .idea/vcs.xml
-src/
-/.gitignore
 /build.gradle
 /gradlew
 /gradlew.bat
 /settings.gradle
+
