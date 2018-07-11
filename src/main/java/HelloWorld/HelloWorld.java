@@ -1,11 +1,18 @@
 package HelloWorld;
 
 public class HelloWorld {
-    public static void main(String []args){
-        println();
+    public static void main(String[] args) {
+        MySystem.MyOut.MyPrintln();
     }
-    private static void println(){
-       System.out.println("Hello World");
+
+
+    static class MySystem {
+        static class MyOut {
+            private static void MyPrintln() {
+                System.out.println("Hello World");
+            }
+        }
     }
+
 
 }
