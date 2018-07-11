@@ -5,9 +5,9 @@ public class ComputerModel {
         System.out.println("Модель компьютера:");
         SystemUnit.CPU.actions();
         SystemUnit.Memory.actions();
-        InputDevices.keyboard.actions();
+        InputDevices.Keyboard.actions();
         InputDevices.mouse.actions();
-        OutputDevices.speakers.actions();
+        OutputDevices.Speakers.actions();
         OutputDevices.display.actions();
 
     }
@@ -38,7 +38,7 @@ public class ComputerModel {
             }
         }
 
-        static class speakers {
+        static class Speakers {
             private static void actions() {
                 System.out.println("Колонки:");
                 System.out.println("-Вывод звука");
@@ -56,7 +56,7 @@ public class ComputerModel {
             }
         }
 
-        static class keyboard {
+        static class Keyboard {
             private static void actions() {
                 System.out.println("Клавиатура:");
                 System.out.println("-Нажатие клавиш.");
