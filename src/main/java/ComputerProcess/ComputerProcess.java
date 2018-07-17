@@ -14,7 +14,7 @@ public class ComputerProcess {
             InputDevices.inputDevicesTurnOn();
         }
         static void computerTurnOff(){
-            System.out.println("Выключение компьютера. \n ~~~~~~~~~~~~~~~~ ");
+            System.out.println("Выключение компьютера. \n ~~~~~~~~~~~~~~~ ");
             OutputDevices.outputDevicesTurnOff();
             InputDevices.inputDevicesTurnOff();
             SystemUnit.systemUnitTurnOff();
