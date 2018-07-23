@@ -6,22 +6,23 @@ public class ComputerProcess {
         Computer.computerTurnOff();
     }
 
-     static class Computer {
-        static void computerTurnOn(){
+      public static class Computer {
+        public static void computerTurnOn(){
             System.out.println("Включение компьютера. \n ~~~~~~~~~~~~~~~~ ");
             SystemUnit.systemUnitTurnOn();
             OutputDevices.outputDevicesTurnOn();
             InputDevices.inputDevicesTurnOn();
         }
-        static void computerTurnOff(){
+        public static void computerTurnOff(){
             System.out.println("Выключение компьютера. \n ~~~~~~~~~~~~~~~ ");
             OutputDevices.outputDevicesTurnOff();
             InputDevices.inputDevicesTurnOff();
             SystemUnit.systemUnitTurnOff();
 
         }
+    }
 
-        static class SystemUnit {
+        public static class SystemUnit {
             static void systemUnitTurnOn() {
                 CPU.turnOn();
                 Memory.turnOn();
@@ -31,7 +32,7 @@ public class ComputerProcess {
                 Memory.turnOff();
             }
             private static class CPU {
-                private static void turnOn() {
+                static void turnOn() {
                     System.out.println("Включение процессора.");
                     actions();
                 }
@@ -152,7 +153,7 @@ public class ComputerProcess {
             }
         }
     }
-}
+
 
 
 

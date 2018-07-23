@@ -2,17 +2,13 @@ package HelloWorld;
 
 public class HelloWorld {
     public static void main(String[] args) {
-        MySystem.MyOut.myPrintln();
+        MySystem.myOut.myPrintln;
     }
-
-
-    static class MySystem {
-        static class MyOut {
-            private static void myPrintln() {
-                System.out.println("Hello World");
-            }
+    public class MySystem{
+        public void myOut(){
+            String myPrintln = "Hello world";
         }
-
-
     }
 }
+
+
