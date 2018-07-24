@@ -2,20 +2,21 @@ package TaskFour;
 
 public class TaskFour {
     public static void main(String[] args) {
-        Computer.computerTurnOn();
-        Computer.computerTurnOff();
+        Computer.turnOn();
+        Computer.turnOff();
     }
 
     public static class Computer {
-        public static void computerTurnOn() {
-            System.out.println("Включение компьютера. \n ~~~~~~~~~~~~~~~~ ");
+        static String computer = "Компьютер";
+        public static void turnOn() {
+            System.out.println(computer + "включается. \n ~~~~~~~~~~~~~~~~ ");
             SystemUnit.systemUnitTurnOn();
             OutputDevices.outputDevicesTurnOn();
             InputDevices.inputDevicesTurnOn();
         }
 
-        public static void computerTurnOff() {
-            System.out.println("Выключение компьютера. \n ~~~~~~~~~~~~~~~ ");
+        public static void turnOff() {
+            System.out.println(computer + "выключается. \n ~~~~~~~~~~~~~~~~ ");
             OutputDevices.outputDevicesTurnOff();
             InputDevices.inputDevicesTurnOff();
             SystemUnit.systemUnitTurnOff();
@@ -26,7 +27,7 @@ public class TaskFour {
     public static class SystemUnit {
         static void systemUnitTurnOn() {
             System.out.println(CPU + " включается.");
-            CPU_Actions();
+            cpuActions();
             System.out.println(memory + " включается.");
             memoryActions();
         }
@@ -39,14 +40,14 @@ public class TaskFour {
 
         static String CPU = "Процессор";
 
-        static void CPU_Actions() {
+        static void cpuActions() {
             System.out.println("~Процессор: \n -Обработка данных.");
         }
 
         static String memory = "Запоминающее устройство";
 
         static void memoryActions() {
-            System.out.println("~Память: \n -Хранение данных.");
+            System.out.println(memory + "\n -Хранение данных.");
         }
 
     }

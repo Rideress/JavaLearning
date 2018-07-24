@@ -2,11 +2,12 @@ package HelloWorld;
 
 public class HelloWorld {
     public static void main(String[] args) {
-        MySystem.myOut.myPrintln;
+        MySystem.myOut;
     }
-    public class MySystem{
-        public void myOut(){
-            String myPrintln = "Hello world";
+    public static class MySystem{
+        static void  myOut = myPrintln();
+        public static void myPrintln(){
+            System.out.println("Hello world");
         }
     }
 }
