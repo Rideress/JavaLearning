@@ -11,7 +11,7 @@ public class HelloWorld {
     }
 
     public static class MyOutput {
-        public static void myPrintln(String phrase) {
+        public  void myPrintln(String phrase) {
             System.out.println(phrase);
         }
     }
