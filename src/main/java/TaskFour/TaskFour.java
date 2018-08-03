@@ -9,14 +9,14 @@ public class TaskFour {
     public static class Computer {
         static String computer = "Компьютер";
         public static void turnOn() {
-            System.out.println(computer + "включается. \n ~~~~~~~~~~~~~~~~ ");
+            System.out.println(computer + " включается. \n ~~~~~~~~~~~~~~~~ ");
             SystemUnit.systemUnitTurnOn();
             OutputDevices.outputDevicesTurnOn();
             InputDevices.inputDevicesTurnOn();
         }
 
         public static void turnOff() {
-            System.out.println(computer + "выключается. \n ~~~~~~~~~~~~~~~~ ");
+            System.out.println(computer + " выключается. \n ~~~~~~~~~~~~~~~~ ");
             OutputDevices.outputDevicesTurnOff();
             InputDevices.inputDevicesTurnOff();
             SystemUnit.systemUnitTurnOff();
