@@ -2,56 +2,75 @@ package TaskSix;
 
 public class TaskSix {
     public static void main(String[] args) {
+        Computer.turnOn();
+        Computer.turnOff();
 
     }
 
     public class Computer {
-
-
-    }
-
-     class SystemUnit {
         SystemUnit cpu = new SystemUnit();
         SystemUnit memory = new SystemUnit();
+        InputDevices mouse = new InputDevices();
+        InputDevices keyboard = new InputDevices();
+        OutputDevices display = new OutputDevices();
+        OutputDevices speakers = new OutputDevices();
+        public void turnOn(){
+            cpu.systemUnitTurnOn();
+            memory.systemUnitTurnOn();
+            mouse.InputDevicesTurnOn();
+            keyboard.InputDevicesTurnOn();
+            display.OutputDevicesTurnOn();
+            speakers.OutputDevicesTurnOn();
+        }
+        public void turnOff(){
+            cpu.systemUnitTurnOff();
+            memory.systemUnitTurnOff();
+            mouse.InputDevicesTurnOff();
+            keyboard.InputDevicesTurnOff();
+            display.OutputDevicesTurnOff();
+            speakers.OutputDevicesTurnOff();
+        }
+    }
 
-        public  void systemUnitTurnOn() {
-            System.out.println(cpu + " включается.");
-            System.out.println(memory + " включается.");
+
+    class SystemUnit {
+
+
+        public void systemUnitTurnOn() {
+           System.out.println(  " включается.");
         }
 
         public void systemUnitTurnOff() {
-            System.out.println(cpu + " выключается.");
-            System.out.println(memory + " выключается.");
+            System.out.println(  " выключается.");
+
         }
     }
 
     class InputDevices {
-        InputDevices mouse = new InputDevices();
-        InputDevices keyboard = new InputDevices();
+
 
         public void InputDevicesTurnOn() {
-            System.out.println(mouse + " включается.");
-            System.out.println(keyboard + " включается.");
+            System.out.println(  " включается.");
+
         }
 
         public void InputDevicesTurnOff() {
-            System.out.println(mouse + " выключается.");
-            System.out.println(keyboard + " выключается.");
+            System.out.println(  " выключается.");
+
         }
     }
 
     class OutputDevices {
-        OutputDevices display = new OutputDevices();
-        OutputDevices speakers = new OutputDevices();
+
 
         public void OutputDevicesTurnOn() {
-            System.out.println(display + " включается.");
-            System.out.println(speakers + " включается.");
+            System.out.println(  " включается.");
+
         }
 
         public void OutputDevicesTurnOff() {
-            System.out.println(display + " выключается.");
-            System.out.println(speakers + " выключается.");
+            System.out.println(  " выключается.");
+
         }
 
     }
