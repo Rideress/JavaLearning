@@ -2,76 +2,151 @@ package TaskSix;
 
 public class TaskSix {
     public static void main(String[] args) {
-        Computer.turnOn();
-        Computer.turnOff();
-
     }
 
     public class Computer {
-        SystemUnit cpu = new SystemUnit();
-        SystemUnit memory = new SystemUnit();
-        InputDevices mouse = new InputDevices();
-        InputDevices keyboard = new InputDevices();
-        OutputDevices display = new OutputDevices();
-        OutputDevices speakers = new OutputDevices();
-        public void turnOn(){
-            cpu.systemUnitTurnOn();
-            memory.systemUnitTurnOn();
-            mouse.InputDevicesTurnOn();
-            keyboard.InputDevicesTurnOn();
-            display.OutputDevicesTurnOn();
-            speakers.OutputDevicesTurnOn();
+
+        SystemUnit mySystemUnit = new SystemUnit();
+        InputDevices myInputDevices = new InputDevices();
+        OutputDevices myOutputDevices = new OutputDevices();
+
+        public void turnOn() {
+            mySystemUnit.systemUnitTurnOn();
+            myInputDevices.InputDevicesTurnOn();
+            myOutputDevices.OutputDevicesTurnOn();
         }
-        public void turnOff(){
-            cpu.systemUnitTurnOff();
-            memory.systemUnitTurnOff();
-            mouse.InputDevicesTurnOff();
-            keyboard.InputDevicesTurnOff();
-            display.OutputDevicesTurnOff();
-            speakers.OutputDevicesTurnOff();
+
+        public void turnOff() {
+            mySystemUnit.systemUnitTurnOff();
+            myInputDevices.InputDevicesTurnOff();
+            myOutputDevices.OutputDevicesTurnOff();
+
         }
     }
 
 
     class SystemUnit {
-
+        Memory myMemory = new Memory();
+        Cpu myCpu = new Cpu();
 
         public void systemUnitTurnOn() {
-           System.out.println(  " включается.");
+            myMemory.turnOn();
+            myCpu.turnOn();
         }
 
         public void systemUnitTurnOff() {
-            System.out.println(  " выключается.");
+            myMemory.turnOff();
+            myCpu.turnOff();
+
 
         }
+
+        public class Memory {
+            String memory = "Запоминающее устройство ";
+
+            public void turnOn() {
+                System.out.println(memory + "включается.");
+            }
+
+            public void turnOff() {
+                System.out.println(memory + "выключается.");
+            }
+
+        }
+
+        public class Cpu {
+            String cpu = "Процессор ";
+
+            public void turnOn() {
+                System.out.println(cpu + "включается.");
+            }
+
+            public void turnOff() {
+                System.out.println(cpu + "выключается.");
+            }
+        }
+
     }
 
     class InputDevices {
-
+        Mouse myMouse = new Mouse();
+        Keyboard myKeyboard = new Keyboard();
 
         public void InputDevicesTurnOn() {
-            System.out.println(  " включается.");
-
+            myKeyboard.turnOn();
+            myMouse.turnOn();
         }
 
         public void InputDevicesTurnOff() {
-            System.out.println(  " выключается.");
+            myKeyboard.turnOn();
+            myMouse.turnOn();
 
+        }
+
+        public class Keyboard {
+            String keyboard = "Клавиатура";
+
+            public void turnOn() {
+                System.out.println(keyboard + "включается.");
+            }
+
+            public void turnOff() {
+                System.out.println(keyboard + "выключается.");
+            }
+        }
+
+
+        public class Mouse {
+            String mouse = "Мышь ";
+
+            public void turnOn() {
+                System.out.println(mouse + "включается.");
+            }
+
+            public void turnOff() {
+                System.out.println(mouse + "выключается.");
+            }
         }
     }
 
-    class OutputDevices {
 
+    class OutputDevices {
+        Display myDisplay = new Display();
+        Speakers mySpeakers = new Speakers();
 
         public void OutputDevicesTurnOn() {
-            System.out.println(  " включается.");
-
+            myDisplay.turnOn();
+            mySpeakers.turnOn();
         }
 
         public void OutputDevicesTurnOff() {
-            System.out.println(  " выключается.");
-
+            myDisplay.turnOff();
+            mySpeakers.turnOff();
         }
 
+        public class Display {
+            String display = "Монитор ";
+
+            public void turnOn() {
+                System.out.println(display + "включается.");
+            }
+
+            public void turnOff() {
+                System.out.println(display + "выключается.");
+            }
+        }
+
+        public class Speakers {
+            String speakers = "Колонки ";
+
+            public void turnOn() {
+                System.out.println(speakers + "включаются.");
+            }
+
+            public void turnOff() {
+                System.out.println(speakers + "выключаются.");
+            }
+        }
     }
 }
+
