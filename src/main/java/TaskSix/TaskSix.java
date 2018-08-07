@@ -2,39 +2,50 @@ package TaskSix;
 
 public class TaskSix {
     public static void main(String[] args) {
+        Computer myComputer = new Computer();
+        myComputer.turnOn();
+        myComputer.turnOff();
+
+
+
     }
 
-    public class Computer {
-
+    public static class Computer {
+        String computer = "Компьютер ";
         SystemUnit mySystemUnit = new SystemUnit();
         InputDevices myInputDevices = new InputDevices();
         OutputDevices myOutputDevices = new OutputDevices();
 
         public void turnOn() {
-            mySystemUnit.systemUnitTurnOn();
-            myInputDevices.InputDevicesTurnOn();
-            myOutputDevices.OutputDevicesTurnOn();
+            System.out.println(computer + "включается. \n ~~~~~~~~~~~");
+            mySystemUnit.turnOn();
+            myInputDevices.turnOn();
+            myOutputDevices.turnOn();
         }
 
         public void turnOff() {
-            mySystemUnit.systemUnitTurnOff();
-            myInputDevices.InputDevicesTurnOff();
-            myOutputDevices.OutputDevicesTurnOff();
+            System.out.println(computer + "выключается. \n ~~~~~~~~~~~");
+            mySystemUnit.turnOff();
+            myInputDevices.turnOff();
+            myOutputDevices.turnOff();
 
         }
     }
 
 
-    class SystemUnit {
+    static class SystemUnit {
+        String systemUnit = "Системный блок ";
         Memory myMemory = new Memory();
         Cpu myCpu = new Cpu();
 
-        public void systemUnitTurnOn() {
+        public void turnOn() {
+            System.out.println(systemUnit + "включается.");
             myMemory.turnOn();
             myCpu.turnOn();
         }
 
-        public void systemUnitTurnOff() {
+        public void turnOff() {
+            System.out.println(systemUnit + "выключается.");
             myMemory.turnOff();
             myCpu.turnOff();
 
@@ -42,20 +53,20 @@ public class TaskSix {
         }
 
         public class Memory {
-            String memory = "Запоминающее устройство ";
+            String name = "  Запоминающее устройство ";
 
             public void turnOn() {
-                System.out.println(memory + "включается.");
+                System.out.println(name + "включается.");
             }
 
             public void turnOff() {
-                System.out.println(memory + "выключается.");
+                System.out.println(name + "выключается.");
             }
 
         }
 
         public class Cpu {
-            String cpu = "Процессор ";
+            String cpu = "  Процессор ";
 
             public void turnOn() {
                 System.out.println(cpu + "включается.");
@@ -68,23 +79,26 @@ public class TaskSix {
 
     }
 
-    class InputDevices {
+    static class InputDevices {
+        String inputDevices = "Устройства ввода ";
         Mouse myMouse = new Mouse();
         Keyboard myKeyboard = new Keyboard();
 
-        public void InputDevicesTurnOn() {
+        public void turnOn() {
+            System.out.println(inputDevices + "включается.");
             myKeyboard.turnOn();
             myMouse.turnOn();
         }
 
-        public void InputDevicesTurnOff() {
+        public void turnOff() {
+            System.out.println(inputDevices + "выключается.");
             myKeyboard.turnOn();
             myMouse.turnOn();
 
         }
 
         public class Keyboard {
-            String keyboard = "Клавиатура";
+            String keyboard = "  Клавиатура ";
 
             public void turnOn() {
                 System.out.println(keyboard + "включается.");
@@ -97,7 +111,7 @@ public class TaskSix {
 
 
         public class Mouse {
-            String mouse = "Мышь ";
+            String mouse = "  Мышь ";
 
             public void turnOn() {
                 System.out.println(mouse + "включается.");
@@ -110,22 +124,25 @@ public class TaskSix {
     }
 
 
-    class OutputDevices {
+    static class OutputDevices {
+        String outputDevices = "Устройства вывода ";
         Display myDisplay = new Display();
         Speakers mySpeakers = new Speakers();
 
-        public void OutputDevicesTurnOn() {
+        public void turnOn() {
+            System.out.println(outputDevices + "включается.");
             myDisplay.turnOn();
             mySpeakers.turnOn();
         }
 
-        public void OutputDevicesTurnOff() {
+        public void turnOff() {
+            System.out.println(outputDevices + "выключается.");
             myDisplay.turnOff();
             mySpeakers.turnOff();
         }
 
         public class Display {
-            String display = "Монитор ";
+            String display = "  Монитор ";
 
             public void turnOn() {
                 System.out.println(display + "включается.");
@@ -137,7 +154,7 @@ public class TaskSix {
         }
 
         public class Speakers {
-            String speakers = "Колонки ";
+            String speakers = "  Колонки ";
 
             public void turnOn() {
                 System.out.println(speakers + "включаются.");
