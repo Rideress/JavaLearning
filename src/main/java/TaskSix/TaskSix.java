@@ -53,7 +53,7 @@ public class TaskSix {
         }
 
         public class Memory {
-            String name = "  Запоминающее устройство ";
+            String name = "Запоминающее устройство ";
 
             public void turnOn() {
                 System.out.println(name + "включается.");
@@ -66,14 +66,14 @@ public class TaskSix {
         }
 
         public class Cpu {
-            String cpu = "  Процессор ";
+            String name = "Процессор ";
 
             public void turnOn() {
-                System.out.println(cpu + "включается.");
+                System.out.println(name + "включается.");
             }
 
             public void turnOff() {
-                System.out.println(cpu + "выключается.");
+                System.out.println(name + "выключается.");
             }
         }
 
@@ -98,27 +98,27 @@ public class TaskSix {
         }
 
         public class Keyboard {
-            String keyboard = "  Клавиатура ";
+            String name = "Клавиатура ";
 
             public void turnOn() {
-                System.out.println(keyboard + "включается.");
+                System.out.println(name + "включается.");
             }
 
             public void turnOff() {
-                System.out.println(keyboard + "выключается.");
+                System.out.println(name + "выключается.");
             }
         }
 
 
         public class Mouse {
-            String mouse = "  Мышь ";
+            String name = "Мышь ";
 
             public void turnOn() {
-                System.out.println(mouse + "включается.");
+                System.out.println(name + "включается.");
             }
 
             public void turnOff() {
-                System.out.println(mouse + "выключается.");
+                System.out.println(name + "выключается.");
             }
         }
     }
@@ -142,26 +142,26 @@ public class TaskSix {
         }
 
         public class Display {
-            String display = "  Монитор ";
+            String name = "Монитор ";
 
             public void turnOn() {
-                System.out.println(display + "включается.");
+                System.out.println(name + "включается.");
             }
 
             public void turnOff() {
-                System.out.println(display + "выключается.");
+                System.out.println(name + "выключается.");
             }
         }
 
         public class Speakers {
-            String speakers = "  Колонки ";
+            String name = "Колонки ";
 
             public void turnOn() {
-                System.out.println(speakers + "включаются.");
+                System.out.println(name + "включаются.");
             }
 
             public void turnOff() {
-                System.out.println(speakers + "выключаются.");
+                System.out.println(name + "выключаются.");
             }
         }
     }
