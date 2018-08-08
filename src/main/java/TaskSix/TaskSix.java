@@ -5,6 +5,9 @@ public class TaskSix {
         Computer myComputer = new Computer();
         myComputer.turnOn();
         myComputer.turnOff();
+        myComputer.turnOn();
+        myComputer.myOutputDevices.mySpeakers.setSpeakers("Колонка 1 ");
+        myComputer.turnOff();
 
 
 
@@ -128,11 +131,17 @@ public class TaskSix {
         String outputDevices = "Устройства вывода ";
         Display myDisplay = new Display();
         Speakers mySpeakers = new Speakers();
+        Speakers mySpeakers1 = new Speakers();
+        public void setSpeakers(String name){
+            System.out.println(name + " включается.");
+
+        }
 
         public void turnOn() {
             System.out.println(outputDevices + "включается.");
             myDisplay.turnOn();
             mySpeakers.turnOn();
+            mySpeakers1.turnOn();
         }
 
         public void turnOff() {
@@ -162,6 +171,10 @@ public class TaskSix {
 
             public void turnOff() {
                 System.out.println(name + "выключаются.");
+            }
+
+            public void setSpeakers(String name) {
+                System.out.println(name + " включается.");
             }
         }
     }
