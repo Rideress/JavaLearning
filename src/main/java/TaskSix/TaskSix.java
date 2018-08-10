@@ -5,8 +5,8 @@ public class TaskSix {
         Computer myComputer = new Computer();
         myComputer.turnOn();
         myComputer.turnOff();
+        myComputer.myOutputDevices.setSpeakers("Колонка 1 ");
         myComputer.turnOn();
-        myComputer.myOutputDevices.mySpeakers.setSpeakers("Колонка 1 ");
         myComputer.turnOff();
 
 
@@ -36,7 +36,7 @@ public class TaskSix {
     }
 
 
-    static class SystemUnit {
+    private static class SystemUnit {
         String systemUnit = "Системный блок ";
         Memory myMemory = new Memory();
         Cpu myCpu = new Cpu();
@@ -82,7 +82,7 @@ public class TaskSix {
 
     }
 
-    static class InputDevices {
+    private static class InputDevices {
         String inputDevices = "Устройства ввода ";
         Mouse myMouse = new Mouse();
         Keyboard myKeyboard = new Keyboard();
@@ -127,14 +127,12 @@ public class TaskSix {
     }
 
 
-    static class OutputDevices {
+    private static class OutputDevices {
         String outputDevices = "Устройства вывода ";
         Display myDisplay = new Display();
         Speakers mySpeakers = new Speakers();
         Speakers mySpeakers1 = new Speakers();
         public void setSpeakers(String name){
-            System.out.println(name + " включается.");
-
         }
 
         public void turnOn() {
@@ -171,10 +169,6 @@ public class TaskSix {
 
             public void turnOff() {
                 System.out.println(name + "выключаются.");
-            }
-
-            public void setSpeakers(String name) {
-                System.out.println(name + " включается.");
             }
         }
     }
