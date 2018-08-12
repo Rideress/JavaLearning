@@ -2,22 +2,28 @@ package TaskSeven;
 
 public class TaskSeven {
     public static void main(String[] args) {
-    SystemUnit.CPU.name.turnOn();
+        SystemUnit.CPU.turnOn();
+        SystemUnit.CPU.turnOff();
     }
 
     static abstract class Devices {
-        protected String name;
+        protected static String name;
 
-        public void devices(String name) {
+        public void Devices(String name){
             this.name = name;
+
         }
 
-        public void turnOn() {
-            System.out.println(name + "включается");
+        public static String getName() {
+            return name;
         }
 
-        public void turnOff() {
-            System.out.println(name + "выключается");
+        public static void turnOn() {
+            System.out.println(getName() + " включается");
+        }
+
+        public static void turnOff() {
+            System.out.println(getName() + "выключается");
         }
     }
 
@@ -25,19 +31,11 @@ public class TaskSeven {
     }
 
     public static class SystemUnit {
-        public static void turnOn(){
-        }
 
         static class CPU extends Devices {
             static String name = "Процессор ";
-
-            public void turnOn() {
-                System.out.println(name + "включается");
-            }
-
-            @Override
-            public void turnOff() {
-                super.turnOff();
+            public static void turnOff() {
+                System.out.println(name + "выключается");
             }
         }
 
