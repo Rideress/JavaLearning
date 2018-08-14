@@ -2,44 +2,75 @@ package TaskSeven;
 
 public class TaskSeven {
     public static void main(String[] args) {
-        SystemUnit.CPU.turnOn();
-        SystemUnit.CPU.turnOff();
+
+
     }
 
-    static abstract class Devices {
-        protected static String name;
+     abstract  class Devices {
+        protected String name;
 
-        public void Devices(String name){
+        public Devices(String name){
             this.name = name;
-
         }
-
-        public static String getName() {
+        public  String getName() {
             return name;
         }
 
-        public static void turnOn() {
-            System.out.println(getName() + " включается");
+        public  void turnOn() {
+            System.out.println(name + " включается");
         }
 
-        public static void turnOff() {
-            System.out.println(getName() + "выключается");
+        public  void turnOff() {
+            System.out.println(name + " выключается");
         }
+
+
     }
 
-    public static class Computer {
+    public  class Computer {
     }
 
-    public static class SystemUnit {
-
-        static class CPU extends Devices {
-            static String name = "Процессор ";
-            public static void turnOff() {
-                System.out.println(name + "выключается");
-            }
+    public  class SystemUnit {
+        public  void turnOn(){
         }
+         class CPU extends Devices {
+             public CPU(String name) {
+                 super(name);
+             }
+             Devices myCpu = new Devices("Процессор "){
+                 @Override
+                 public String getName() {
+                     return super.getName();
+                 }
 
+                 @Override
+                 public void turnOn() {
+                     super.turnOn();
+                 }
 
+                 @Override
+                 public void turnOff() {
+                     super.turnOff();
+                 }
+             };
+         }
+         class memory extends Devices{
+            Devices meMemory = new Devices("Запоминающее устройство ") {
+                @Override
+                public void turnOn() {
+                    super.turnOn();
+                }
+
+                @Override
+                public void turnOff() {
+                    super.turnOff();
+                }
+            };
+
+             public memory(String name) {
+                 super(name);
+             }
+         }
     }
 
 
