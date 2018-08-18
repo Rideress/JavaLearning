@@ -2,7 +2,7 @@ package TaskSeven;
 
 public class TaskSeven {
     public static void main(String[] args) {
-        Computer myComputer = new Computer();
+        Computer myComputer = new Computer("Компьютер");
         myComputer.turnOn();
         System.out.println("~~~~~~~~~~");
         myComputer.turnOff();
@@ -21,31 +21,38 @@ public class TaskSeven {
         }
 
         public void turnOn() {
-            System.out.println(name + "включается");
+            System.out.println(name + "  включается");
         }
 
         public void turnOff() {
-            System.out.println(name + "выключается");
+            System.out.println(name + " выключается");
         }
 
 
     }
 
-    public static class Computer {
+    public static class Computer extends Device {
         String computer = "Компьютер ";
-        SystemUnit mySystemUnit = new SystemUnit();
-        OutputDevices myOutputDevices = new OutputDevices();
-        InputDevices myInputDevices = new InputDevices();
+        SystemUnit mySystemUnit = new SystemUnit("Системный блок");
+        OutputDevices myOutputDevices = new OutputDevices("Устройства вывода");
+        InputDevices myInputDevices = new InputDevices("Устрйоства ввода");
 
+        public Computer(String name) {
+            super(name);
+        }
+
+
+
+        @Override
         public void turnOn() {
-            System.out.println(computer + "включается.");
-            mySystemUnit.turnOn();
-            myOutputDevices.turnOn();
-            myInputDevices.turnOn();
+            super.turnOn();
+                mySystemUnit.turnOn();
+                myOutputDevices.turnOn();
+                myInputDevices.turnOn();
         }
 
         public void turnOff() {
-            System.out.println(computer + "выключается.");
+            super.turnOff();
             mySystemUnit.turnOff();
             myOutputDevices.turnOff();
             myInputDevices.turnOff();
@@ -53,17 +60,23 @@ public class TaskSeven {
 
     }
 
-    public static class SystemUnit {
-        CPU myCpu = new CPU("Процессор ");
-        Memory myMemory = new Memory("Запоминающее устройство ");
+    public static class SystemUnit extends Device {
+        CPU myCpu = new CPU("Процессор");
+        Memory myMemory = new Memory("Запоминающее устройство");
+
+        public SystemUnit(String name) {
+            super(name);
+        }
 
         public void turnOn() {
+            super.turnOn();
             myCpu.turnOn();
             myMemory.turnOn();
 
         }
 
         public void turnOff() {
+            super.turnOff();
             myCpu.turnOff();
             myMemory.turnOff();
         }
@@ -83,9 +96,13 @@ public class TaskSeven {
     }
 
 
-    public static class OutputDevices {
-        Display myDisplay = new Display("Монитор ");
-        Speaker mySpeaker = new Speaker("Колонки ");
+    public static class OutputDevices extends Device {
+        Display myDisplay = new Display("Монитор");
+        Speaker mySpeaker = new Speaker("Колонки");
+
+        public OutputDevices(String name) {
+            super(name);
+        }
 
         public void turnOn() {
             myDisplay.turnOn();
@@ -111,16 +128,22 @@ public class TaskSeven {
     }
 
 
-    public static class InputDevices {
-        Keyboard myKeyboard = new Keyboard("Клавиатура ");
-        Mouse myMouse = new Mouse("Мышь ");
+    public static class InputDevices extends Device {
+        Keyboard myKeyboard = new Keyboard("Клавиатура");
+        Mouse myMouse = new Mouse("Мышь");
 
+        public InputDevices(String name) {
+            super(name);
+        }
+        @Override
         public void turnOn() {
+            super.turnOn();
             myKeyboard.turnOn();
             myMouse.turnOn();
         }
 
         public void turnOff() {
+            super.turnOff();
             myKeyboard.turnOff();
             myMouse.turnOff();
         }

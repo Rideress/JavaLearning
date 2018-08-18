@@ -5,12 +5,6 @@ public class TaskSix {
         Computer myComputer = new Computer();
         myComputer.turnOn();
         myComputer.turnOff();
-        myComputer.myOutputDevices.setSpeakers("Колонка 1 ");
-        myComputer.turnOn();
-        myComputer.turnOff();
-
-
-
     }
 
     public static class Computer {
@@ -132,7 +126,9 @@ public class TaskSix {
         Display myDisplay = new Display();
         Speakers mySpeakers = new Speakers();
         Speakers mySpeakers1 = new Speakers();
-        public void setSpeakers(String name){
+
+        public void setMySpeakers(Speakers mySpeakers) {
+            this.mySpeakers = mySpeakers;
         }
 
         public void turnOn() {
